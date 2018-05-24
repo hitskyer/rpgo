@@ -5,3 +5,8 @@
 * 通过“-ldfflags -X”建立编译时生成的变量
     * 参考：https://studygolang.com/articles/2052
     * 实例：关注BuildVersion、BuildTime、BuildComment
+* 通过flag模块解析命令行参数
+    * 参考：https://studygolang.com/articles/5608
+    * 实例：关注config_file
+* 关于init函数
+    * 参考：https://blog.csdn.net/zhuxinquan61/article/details/73712251
