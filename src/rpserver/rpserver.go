@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"flag"
+	"runtime"
 )
 
 /*
@@ -17,9 +18,9 @@ var (
 )
 
 func version() {
-	fmt.Printf("main.BuildVersion = %s\n", BuildVersion)
-	fmt.Printf("main.BuildTime    = %s\n", BuildTime)
-	fmt.Printf("main.BuildComment = %s\n", BuildComment)
+	fmt.Printf("main.BuildVersion  = %s\n", BuildVersion)
+	fmt.Printf("main.BuildTime     = %s\n", BuildTime)
+	fmt.Printf("main.BuildComment  = %s\n", BuildComment)
 }
 func init() {
 	// 仅仅因为好奇
@@ -33,5 +34,10 @@ func main() {
 	version()
 	// 解析命令行参数
 	flag.Parse()
-	fmt.Printf("config_file : %s\n", *gConfigFile)
+	fmt.Printf("config_file        : %s\n", *gConfigFile)
+	// 最大化使用cpu
+	runtime.GOMAXPROCS(runtime.NumCPU())
+	fmt.Printf("the number of cpus : %d\n", runtime.NumCPU())
+	// 启动服务
+	StartHttpServer("localhost:9100")
 }

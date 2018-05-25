@@ -10,3 +10,6 @@
     * 实例：关注config_file
 * 关于init函数
     * 参考：https://blog.csdn.net/zhuxinquan61/article/details/73712251
+* 搭建http服务
+    * 参考：https://segmentfault.com/a/1190000006812688
+    * 实例：关注./src/rpserver/http.go中的StartHttpServer函数
